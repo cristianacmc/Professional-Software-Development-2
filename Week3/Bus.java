@@ -11,12 +11,15 @@ public class Bus {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int [] id = new int[5];
-        String [] make = new String[5];
+        final int MAX = 1;
+        int [] id = new int[MAX];
+        String [] make = new String[MAX];
         int [] capacity = new int[5];
-        boolean [] automatic = new boolean[5];
+        boolean [] automatic = new boolean[MAX];
+        boolean found = false;
+        int position = 0;
 
-        for(int index=0; index < 1; index++){
+        for(int index=0; index < MAX; index++){
             //id
             System.out.print("Bus " + (index+1) + " id: ");
             id[index] = scan.nextInt();
@@ -33,9 +36,22 @@ public class Bus {
             automatic[index] = scan.hasNextBoolean();
             scan.nextLine();
         }
-        System.out.println("ID\t\tMake\t\tCapacity\tAutomatic");
-        for(int index = 0; index < 1; index ++ ){
-            System.out.println(id[index] + "\t\t" + make[index] + "\t\t" + capacity[index] + "\t\t\t" + automatic[index]);
+        System.out.println("ID\t\tMake\t\t\tCapacity\tAutomatic\n");
+        for(int index = 0; index < MAX; index ++ ){
+            System.out.println(id[index] + "\t\t" + make[index] + "\t\t\t" + capacity[index] + "\t\t\t" + automatic[index] + "\n");
+        }
+
+        System.out.print("Enter the Bus ID: ");
+        int ID = scan.nextInt();
+
+        while((!found) && (position < MAX)){
+            if (id[position] == ID){
+                System.out.print("ID\tMake\t\tCapacity\tAutomatic\n");
+                System.out.println(id[position] + "\t" + make[position] + "\t\t" + capacity[position] + "\t\t\t" + automatic[position]);
+                found = true;
+            } else {
+                position ++;
+            }
         }
 
     } //main
