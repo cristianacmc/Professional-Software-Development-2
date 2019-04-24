@@ -3,7 +3,7 @@ package Week2.Assessment1;
 /**
  * Created by Cristiana Costa
  * on 2019-04-24
- * Program to
+ * Program to create the subclass Lion
  */
 
 public class Lion extends Animal {
@@ -14,6 +14,7 @@ public class Lion extends Animal {
     // instance variables
     int age;
     String name;
+    boolean hasMane;
 
     // constructor methods
     public Lion(){
@@ -21,11 +22,12 @@ public class Lion extends Animal {
         numberOfLion++;
     }
 
-    public Lion(String customKindOfFood, int customLifeExpectancy, int customAge, String customName){
+    public Lion(String customKindOfFood, int customLifeExpectancy, int customAge, String customName, boolean customHasMane){
         super(customKindOfFood,customLifeExpectancy);
         numberOfLion++;
         age = customAge;
         name = customName;
+        hasMane = customHasMane;
     }
 
     // setters methods
@@ -34,7 +36,13 @@ public class Lion extends Animal {
     }
 
     public String toString(){
-        return ("The name of the lion is " + this.name + " and it is " + this.age + " years old. " + super.toString());
+        String mane;
+        if(hasMane == true){
+            mane = "It has mane. ";
+        } else {
+            mane = "It doesn't have mane. ";
+        }
+        return ("The name of the lion is " + this.name + " and it is " + this.age + " years old. " + mane + super.toString());
     }
 
 

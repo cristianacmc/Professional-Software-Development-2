@@ -11,8 +11,8 @@ public class TestAnimal {
     public static void main(String[] args) {
         // Write an application class called TestAnimal that will create two Lion objects called myLion1 and myLion2.
         // Initialise the properties required with values of your own choice.
-        Lion myLion1 =  new Lion("meat", 14, 8, "Simba");
-        Lion myLion2 = new  Lion("meat", 14, 10, "Nala");
+        Lion myLion1 =  new Lion("meat", 14, 8, "Simba", true);
+        Lion myLion2 = new  Lion("meat", 14, 10, "Nala", false);
 
         // call the appropriate method to set the age of MyLion1 to 3
         myLion1.setAge(3);
