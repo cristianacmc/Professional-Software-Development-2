@@ -3,10 +3,11 @@ package Lab2.Company;
 /**
  * Created by Cristiana Costa
  * on 2019-04-09
- * Program to set the class Employee
+ * Program to set the super class Employee
  */
 
 public class Employee {
+
 
     String number;
     String name;
