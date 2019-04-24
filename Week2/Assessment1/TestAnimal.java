@@ -19,7 +19,7 @@ public class TestAnimal {
 
         System.out.println("The number os lions created are " + Lion.getNoOfLions());
 
-        myLion1.toString();
+        System.out.println(myLion1.toString());
 
     } //main
 

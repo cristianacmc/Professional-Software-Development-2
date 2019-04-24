@@ -34,7 +34,7 @@ public class Lion extends Animal {
     }
 
     public String toString(){
-        return ("The name of the lion is " + this.name + " and it is " + this.age + " years old." + super.toString());
+        return ("The name of the lion is " + this.name + " and it is " + this.age + " years old. " + super.toString());
     }
 
 
