@@ -1,15 +1,18 @@
-package Lab1;
+package Week1.Cars;
 import java.util.Calendar;
 
 /**
  * Created by Cristiana Costa
  * on 2019-04-02
- * Program to
+ * Program to create a class Car
  */
 
 public class Car {
 
-    // 1 - private attributes for a car
+    // class variable
+    private static int noOfBoxes = 0;
+
+    // instance variables
     private int id;
     private String make;
     private String ownerName;
@@ -18,64 +21,68 @@ public class Car {
     private int topSpeed;
     private double costPrice;
 
-    // 1.6
-    private static int noOfBoxes = 0;
-
-    public static int numberOfBoxes(){
+    // instance method
+    private static int numberOfBoxes(){
         return noOfBoxes;
     }
 
 
-    // a constructor that assigns the value for all the 7 parameters
+    // constructors
+    public Car(){
+        noOfBoxes++;
+        this.id = 0;
+        this.make = "none";
+        this.ownerName = "none";
+        this.colour = "none";
+        this.yearOfManufacture = 0;
+        this.topSpeed = 0;
+        this.costPrice = 0;
+    }
+
     public Car(int customId, String customMake, String customOwner, String customColour,
                int customYear, int customTop, double customPrice ){
         noOfBoxes ++;
-        id = customId;
-        make = customMake;
-        ownerName = customOwner;
-        colour = customColour;
-        yearOfManufacture = customYear;
-        topSpeed = customTop;
-        costPrice = customPrice;
+        this.id = customId;
+        this.make = customMake;
+        this.ownerName = customOwner;
+        this.colour = customColour;
+        this.yearOfManufacture = customYear;
+        this.topSpeed = customTop;
+        this.costPrice = customPrice;
+
     }
 
-    // default constructor
-    public Car(){
-
-        // each time a new box is created the variable is incremented by 1
-        noOfBoxes++;
-    }
-
-    // a constructor that receives 4 parameters in the signature and assign the values
     public Car(int customId, String customMake, String customOwner, String customColour){
-
-        // each time a new box is created the variable is incremented by 1
         noOfBoxes++;
-        id = customId;
-        make = customMake;
-        ownerName = customOwner;
-        colour = customColour;
+        this.id = customId;
+        this.make = customMake;
+        this.ownerName = customOwner;
+        this.colour = customColour;
+        this.yearOfManufacture = 0;
+        this.topSpeed = 0;
+        this.costPrice = 0;
     }
 
-    // a constructor that receives 3 parameters in the signature and assign the values
     public Car(int customId, String customOwner, int customSpeed){
-
-        // each time a new box is created the variable is incremented by 1
         noOfBoxes++;
-        id = customId;
-        ownerName = customOwner;
+        this.id = customId;
+        this.make = "none";
+        this.ownerName = customOwner;
+        this.colour = "none";
+        this.yearOfManufacture = 0;
         topSpeed = customSpeed;
+        this.costPrice = 0;
     }
 
-    // 3.1 print out all the information about the car
+    //class method to print out all the information about the car
     public void printCarInfo(){
-        System.out.println("The id is " + id);
-        System.out.println("The make is " + make);
-        System.out.println("The Owner name is " + ownerName);
+        System.out.println("The id is " + this.id);
+        System.out.println("The make is " + this.make);
+        System.out.println("The Owner name is " + this.ownerName);
         System.out.println("The colour is " + colour);
-        System.out.println("The year of manufacture is " + yearOfManufacture);
-        System.out.println("The top speed is " + topSpeed);
-        System.out.println("The price is " + costPrice);
+        System.out.println("The year of manufacture is " + this.yearOfManufacture);
+        System.out.println("The top speed is " + this.topSpeed);
+        System.out.println("The price is " + this.costPrice);
     }
 
     // 3.4 setters
@@ -84,55 +91,68 @@ public class Car {
     }
 
     public void setMake (String itsMake){
-        make = itsMake;
+
+        this.make = itsMake;
     }
 
     public void setOwner (String whoOwns){
-        ownerName = whoOwns;
+
+        this.ownerName = whoOwns;
     }
 
     public void setColour (String itsColour){
-        colour = itsColour;
+
+        this.colour = itsColour;
     }
 
     public void setYear (int whenBuild){
-        yearOfManufacture = whenBuild;
+
+        this.yearOfManufacture = whenBuild;
     }
 
     public void setSpeed (int maxSpeed){
-        topSpeed = maxSpeed;
+
+        this.topSpeed = maxSpeed;
     }
 
     public void setCost (double price){
-        costPrice = price;
+
+        this.costPrice = price;
     }
 
     // 3.4 getters
     public int getId(){
+
         return id;
     }
 
     public String getMake(){
+
         return make;
     }
 
     public String getOwner(){
+
         return ownerName;
     }
 
     public String getColour(){
+
         return colour;
     }
 
     public int getYear(){
+
         return yearOfManufacture;
     }
 
     public int getSpeed(){
+
         return topSpeed;
     }
 
     public double getCost(){
+
         return costPrice;
     }
 
